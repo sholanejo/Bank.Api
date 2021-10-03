@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.HttpOverrides;
 using Entities.Models;
+using Entities.DataTransferObjects;
 
 namespace Bank.API
 {
@@ -34,6 +35,7 @@ namespace Bank.API
             services.ConfigureIISIntegration();
             services.ConfigureLoggerService();
             services.ConfigureRepositoryManager();
+            services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddControllers();
         }
