@@ -9,6 +9,7 @@ namespace Contracts
     public interface IRepositoryManager
     {
         IAspNetUserRepository AspNetUser { get; }
+        IAccountRepository Account { get; }
         void Save();
     }
 }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Contracts
 {
-    public interface IAspNetUserRepository
+    public interface IAccountRepository
     {
-        IEnumerable<AspNetUser> GetAspNetUsers(bool trackChanges);
-        AspNetUser GetAspNetUser(string userId, bool trackChanges);
+        IEnumerable<Account> GetAccounts(string userId, bool trackChanges);
     }
 }

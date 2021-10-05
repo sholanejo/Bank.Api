@@ -13,8 +13,8 @@ namespace Entities.DataTransferObjects
         public MappingProfile()
         {
             CreateMap<AspNetUser, UsersDTO>();
-                
-                
+
+            CreateMap<Account, AccountsDTO>();    
         }
     }
 }

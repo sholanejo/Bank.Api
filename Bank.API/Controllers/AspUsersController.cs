@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Bank.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/aspusers")]
     [ApiController]
     public class AspUsersController : ControllerBase
     {
@@ -30,5 +30,22 @@ namespace Bank.API.Controllers
             return Ok(usersDTO);
 
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetCompany(string id)
+        {
+            var user = _repository.AspNetUser.GetAspNetUser(id, trackChanges: false);
+            if (user == null)
+            {
+                _logger.LogInfo($"Co,pany witth id:{id} doesn't exist in the database.");
+                return NotFound();
+            }
+            else
+            {
+                var userDto = _mapper.Map<UsersDTO>(user);
+                return Ok(userDto);
+            }
+        }
+
     }
 }

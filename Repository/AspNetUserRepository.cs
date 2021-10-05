@@ -15,5 +15,9 @@ namespace Repository
                 FindAll(trackChanges)
                 .OrderBy(c => c.FullName)
                 .ToList();
+
+        public AspNetUser GetAspNetUser(string userId, bool trackChanges) =>
+            FindByCondition(u => u.Id.Equals(userId), trackChanges)
+            .SingleOrDefault();
     }
 }
