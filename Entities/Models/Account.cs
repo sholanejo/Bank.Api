@@ -12,7 +12,7 @@ namespace Entities.Models
             Customers = new HashSet<Customer>();
         }
 
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string AccountNumber { get; set; }
         public decimal Balance { get; set; }
         public bool IsActive { get; set; }

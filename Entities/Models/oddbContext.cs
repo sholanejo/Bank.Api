@@ -1,4 +1,5 @@
 ﻿using System;
+using Entities.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -163,6 +164,9 @@ namespace Entities.Models
                     .WithMany(p => p.Transactions)
                     .HasForeignKey(d => d.UserId);
             });
+
+            modelBuilder.ApplyConfiguration(new AspUserConfiguration());
+            modelBuilder.ApplyConfiguration(new AccountConfiguration());
 
             OnModelCreatingPartial(modelBuilder);
         }

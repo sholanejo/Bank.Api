@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Bank.API.Controllers
 {
-    [Route("api/aspusers")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AspUsersController : ControllerBase
     {

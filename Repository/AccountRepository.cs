@@ -17,6 +17,6 @@ namespace Repository
 
         public IEnumerable<Account> GetAccounts(string UserId, bool trackChanges) =>
             FindByCondition(a => a.Id.Equals(UserId), trackChanges)
-            .OrderBy(b => b.Balance);
+            .OrderBy(b => b.AccountNumber);
     }
 }

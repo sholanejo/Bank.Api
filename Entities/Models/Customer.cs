@@ -11,7 +11,7 @@ namespace Entities.Models
         public string UserId { get; set; }
         public DateTime Birthday { get; set; }
         public int Gender { get; set; }
-        public Guid AccountId { get; set; }
+        public string AccountId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public string CreatedBy { get; set; }

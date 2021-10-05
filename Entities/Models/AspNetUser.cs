@@ -21,6 +21,7 @@ namespace Entities.Models
         public string FullName { get; set; }
         public bool StillHasDefaultPassword { get; set; }
         public byte[] ProfilePicture { get; set; }
+        public string AccountId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public string CreatedBy { get; set; }
@@ -40,6 +41,7 @@ namespace Entities.Models
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
 
+        public virtual ICollection <Account> Account { get; set; }
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual ICollection<AspNetUserRole> AspNetUserRoles { get; set; }
